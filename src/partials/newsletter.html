@@ -1,13 +1,18 @@
 <section class="home-newsletter section" aria-labelledby="newsletter-title">
   <div class="container newsletter-layout">
-    <div><h2 id="newsletter-title">Inspiration for your walls.</h2><p>Discover ideas, product news and occasional offers from Photo Canvas.</p></div>
+    <div>
+      <h2 id="newsletter-title">Inspiration for your walls.</h2>
+      <p>Discover ideas, product news and occasional offers from Photo Canvas.</p>
+    </div>
     <form class="newsletter-form" novalidate data-js="newsletter-form">
       <label class="visually-hidden" for="newsletter-email">Email address</label>
       <div class="newsletter-form__field">
-        <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="{{newsletter_placeholder}}" required aria-describedby="newsletter-status">
+        <input id="newsletter-email" name="email" type="email" autocomplete="email"
+          placeholder="{{newsletter_placeholder}}" required aria-describedby="newsletter-status">
       </div>
       <button class="button button--primary" type="submit">Sign up</button>
     </form>
-    <p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite" data-js="newsletter-status"></p>
+    <p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite" data-js="newsletter-status">
+    </p>
   </div>
 </section>
