@@ -1,0 +1,30 @@
+// ==========================================================
+// CTA BAND | Centred closing call to action (3230:7832)
+// ==========================================================
+.cta-band {
+  padding-block: var(--space-36) var(--space-24);
+  background: var(--color-surface-primary);
+  text-align: center;
+}
+
+.cta-band__inner {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-8);
+}
+
+.cta-band h2 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-section-heading);
+  line-height: var(--line-height-section-heading);
+}
+
+.cta-band p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.cta-band .button {
+  margin-top: var(--space-16);
+}

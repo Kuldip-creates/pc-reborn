@@ -1,0 +1,72 @@
+// ==========================================================
+// PDP QUALITY | Materials, print method and care (3230:7690)
+// ==========================================================
+@use '../abstracts/breakpoints' as *;
+
+.pdp-quality__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-24);
+}
+
+.pdp-quality .section-heading {
+  margin-bottom: var(--space-32);
+}
+
+.pdp-quality__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-20) var(--space-20);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pdp-quality__item {
+  display: grid;
+  grid-template-columns: var(--space-24) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-12);
+  color: var(--color-text-primary);
+}
+
+.pdp-quality__item h3 {
+  font-size: var(--font-size-trust);
+  font-weight: 600;
+  line-height: var(--line-height-trust);
+}
+
+.pdp-quality__item p {
+  margin-top: var(--space-6);
+  color: var(--color-text-body);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+}
+
+.pdp-quality__item .text-link {
+  margin-top: var(--space-6);
+  white-space: normal;
+}
+
+.pdp-quality__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-media);
+  aspect-ratio: 600 / 400;
+  object-fit: cover;
+}
+
+@include up('md') {
+  .pdp-quality__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@include up('lg') {
+  // Figma columns: 700px copy, 600px image.
+  .pdp-quality__layout {
+    grid-template-columns: minmax(0, 700fr) minmax(0, 600fr);
+    column-gap: var(--space-48);
+  }
+}

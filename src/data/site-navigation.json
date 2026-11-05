@@ -1,0 +1,92 @@
+[
+  {
+    "id": "wall-art",
+    "label": "Wall Art",
+    "href": "./wall-art.html",
+    "links": [
+      { "label": "Photo Posters", "href": "https://www.photo-canvas.com/photo-poster" },
+      { "label": "Framed Photo Prints", "href": "https://www.photo-canvas.com/framed-photo-prints" },
+      { "label": "Metal Prints", "href": "https://www.photo-canvas.com/aluminium-photo-prints" },
+      { "label": "Acrylic Photo Blocks", "href": "https://www.photo-canvas.com/acrylic-photo-blocks" },
+      { "label": "Personalised Wall Hangings", "href": "https://www.photo-canvas.com/personalised-wall-hangings" },
+      { "label": "Personalised Wall Plates", "href": "https://www.photo-canvas.com/personalised-wall-plates" },
+      { "label": "Personalised Artwork", "href": "https://www.photo-canvas.com/personalised-artwork" }
+    ],
+    "feature": {
+      "visual": "framed",
+      "image": "assets/images/mega-menu-feature-artwork.png",
+      "eyebrow": "THE WALL ART EDIT",
+      "title": "Frame your favourite moments.",
+      "description": "Discover framed photo prints and statement wall-art finishes made to suit your space.",
+      "ctaLabel": "Explore framed prints",
+      "href": "https://www.photo-canvas.com/framed-photo-prints"
+    }
+  },
+  {
+    "id": "canvas-prints",
+    "label": "Canvas Prints",
+    "links": [
+      { "label": "Unframed Canvas", "href": "https://www.photo-canvas.com/unframed-canvas" },
+      { "label": "Large Canvas Prints", "href": "./large-canvas-prints.html" },
+      { "label": "Extra Large Canvas Prints", "href": "https://www.photo-canvas.com/extra-large-canvas-prints" },
+      { "label": "Mini Canvas", "href": "https://www.photo-canvas.com/mini-canvas" },
+      { "label": "Panoramic Canvas", "href": "https://www.photo-canvas.com/panoramic-canvas" },
+      { "label": "Photo Collage Canvas", "href": "https://www.photo-canvas.com/photo-collage-canvas" },
+      { "label": "Black & White Canvas", "href": "https://www.photo-canvas.com/black-and-white-canvas" },
+      { "label": "Custom Size Canvas", "href": "https://www.photo-canvas.com/custom-size-canvas" },
+      { "label": "Diptych Canvas", "href": "https://www.photo-canvas.com/diptych-canvas" },
+      { "label": "Triptych Canvas", "href": "https://www.photo-canvas.com/triptych-canvas" }
+    ],
+    "feature": {
+      "visual": "canvas",
+      "image": "assets/images/mega-menu-feature-artwork.png",
+      "eyebrow": "THE CANVAS EDIT",
+      "title": "Make it personal.",
+      "description": "Turn favourite photos into gallery-wrapped canvas prints, made to bring your walls to life.",
+      "ctaLabel": "Explore canvas prints",
+      "href": "./large-canvas-prints.html"
+    }
+  },
+  {
+    "id": "wallpaper",
+    "label": "Wallpaper",
+    "links": [
+      { "label": "Custom Wallpaper", "href": "https://www.photo-canvas.com/custom-wallpaper" },
+      { "label": "Personalised Wallpaper Borders", "href": "https://www.photo-canvas.com/personalised-wallpaper-border" }
+    ],
+    "feature": {
+      "visual": "wallpaper",
+      "image": "assets/images/mega-menu-feature-artwork.png",
+      "eyebrow": "THE WALLPAPER EDIT",
+      "title": "Make a statement wall.",
+      "description": "Create a made-to-measure feature wall with your own photography, artwork or pattern.",
+      "ctaLabel": "Explore custom wallpaper",
+      "href": "https://www.photo-canvas.com/custom-wallpaper"
+    }
+  },
+  {
+    "id": "photo-gifts",
+    "label": "Photo Gifts",
+    "links": [
+      { "label": "Photo Mugs", "href": "https://www.photo-canvas.com/photo-mug" },
+      { "label": "Photo Cushions", "href": "https://www.photo-canvas.com/picture-cushions" },
+      { "label": "Photo Blankets", "href": "https://www.photo-canvas.com/photo-blanket" },
+      { "label": "Photo Books", "href": "https://www.photo-canvas.com/make-your-own-photo-book" },
+      { "label": "Photo Coasters", "href": "https://www.photo-canvas.com/personalised-photo-coasters" },
+      { "label": "Photo Puzzles", "href": "https://www.photo-canvas.com/photo-puzzle" },
+      { "label": "Photo Keyrings", "href": "https://www.photo-canvas.com/leather-photo-keyring" },
+      { "label": "Photo Bags", "href": "https://www.photo-canvas.com/photo-handbags" },
+      { "label": "Photo Towels", "href": "https://www.photo-canvas.com/photo-beach-towel" },
+      { "label": "Gift Vouchers", "href": "https://www.photo-canvas.com/gift-vouchers" }
+    ],
+    "feature": {
+      "visual": "mug",
+      "image": "assets/images/mega-menu-feature-artwork.png",
+      "eyebrow": "THE PHOTO GIFT EDIT",
+      "title": "A little something personal.",
+      "description": "Put favourite photos onto thoughtful gifts to keep, use and share every day.",
+      "ctaLabel": "Explore photo mugs",
+      "href": "https://www.photo-canvas.com/photo-mug"
+    }
+  }
+]

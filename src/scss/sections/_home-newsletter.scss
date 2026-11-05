@@ -1,0 +1,97 @@
+@use '../abstracts/breakpoints' as *;
+
+.newsletter-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.newsletter-layout > div > p {
+  margin-top: var(--space-8);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.newsletter-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-24);
+}
+
+.page-home .newsletter-form__field,
+.page-category .newsletter-form__field,
+.page-pdp .newsletter-form__field {
+  display: grid;
+  align-content: center;
+  gap: var(--space-2);
+  min-height: 56px;
+  padding: var(--space-16) var(--space-12);
+  border: 1px solid var(--color-border-interactive);
+  border-radius: var(--radius-input);
+  background: var(--color-surface-primary);
+}
+
+.newsletter-form__field label {
+  color: var(--color-text-body);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.newsletter-form__field input {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+}
+
+.newsletter-form__field input:focus-visible {
+  outline-offset: var(--space-2);
+}
+
+.page-home .newsletter-form > .button,
+.page-category .newsletter-form > .button,
+.page-pdp .newsletter-form > .button {
+  min-height: 56px;
+}
+
+.page-pdp .newsletter-form :is(input, button):focus-visible,
+.page-category .newsletter-form :is(input, button):focus-visible {
+  outline: var(--space-2) solid var(--color-action-primary);
+  outline-offset: var(--space-2);
+}
+
+.newsletter-status {
+  grid-column: 1 / -1;
+  color: var(--color-text-body);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+// The status row is an always-present live region. At desktop it must not add a
+// row gap while empty, otherwise it would stretch the section.
+@include up('lg') {
+  .newsletter-layout {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 8fr);
+    column-gap: var(--space-88);
+    row-gap: 0;
+  }
+
+  .newsletter-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page-home .newsletter-form,
+  .page-category .newsletter-form,
+  .page-pdp .newsletter-form {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  }
+
+  .newsletter-status:not(:empty) {
+    margin-top: var(--space-8);
+  }
+}

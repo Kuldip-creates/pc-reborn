@@ -1,0 +1,59 @@
+// ==========================================================
+// PDP RELATED | Illustrated wall scenes for related formats (3230:7767)
+// ==========================================================
+// Each scene is a 321 × 401.25 wall with a 33px floor band; frames are
+// sized as a share of the scene width so the drawing scales fluidly.
+.pdp-related__scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding-bottom: 10.28%;
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  background: var(--color-surface-secondary);
+  aspect-ratio: 4 / 5;
+}
+
+.pdp-related__frame {
+  display: block;
+  padding: var(--space-8);
+  background: var(--color-action-primary);
+}
+
+.pdp-related__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pdp-related__scene--multi .pdp-related__frame {
+  width: 24%;
+  padding: var(--space-6);
+  aspect-ratio: 77 / 190;
+}
+
+.pdp-related__scene--panoramic .pdp-related__frame {
+  width: 86.3%;
+  aspect-ratio: 277 / 129;
+}
+
+.pdp-related__scene--montage .pdp-related__frame {
+  width: 78.2%;
+  aspect-ratio: 251 / 305;
+}
+
+.pdp-related__scene--large .pdp-related__frame {
+  width: 75%;
+  aspect-ratio: 241 / 300;
+}
+
+.pdp-related__face {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 125fr) minmax(0, 135fr);
+  gap: var(--space-8) var(--space-16);
+  padding: var(--space-8);
+  background: var(--color-surface-primary);
+}

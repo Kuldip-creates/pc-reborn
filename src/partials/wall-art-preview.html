@@ -1,0 +1,215 @@
+<!-- ==========================================================
+     WALL ART PREVIEW | Responsive local design prototype
+     ========================================================== -->
+<main class="wall-art-preview" id="main" data-js="wall-art-preview" data-view="photo">
+  <div class="container">
+    <h1 class="wall-art-preview__title" tabindex="-1" data-js="title">Add your photo</h1>
+    <p data-js="intro">Choose a photo to create your wall art.</p>
+    <noscript><p>JavaScript is required for the local photo preview. <a href="./wall-art.html">Explore wall-art products instead.</a></p></noscript>
+
+    <form class="wall-art-preview__form" data-js="flow" hidden novalidate>
+      <nav class="wall-art-preview__progress" aria-label="Designer progress">
+        <ol data-js="progress-list">
+          <li class="wall-art-preview__progress-step" data-progress-step="0">
+            <span class="wall-art-preview__progress-item" data-js="progress-item" aria-current="step" aria-label="Photo, current step"><span class="wall-art-preview__progress-marker" data-js="progress-marker">01</span><span class="wall-art-preview__progress-label">Photo</span></span>
+            <span class="wall-art-preview__progress-connector" aria-hidden="true"></span>
+          </li>
+          <li class="wall-art-preview__progress-step" data-progress-step="1">
+            <span class="wall-art-preview__progress-item" data-js="progress-item" aria-label="Customise, upcoming"><span class="wall-art-preview__progress-marker" data-js="progress-marker">02</span><span class="wall-art-preview__progress-label">Customise</span></span>
+            <span class="wall-art-preview__progress-connector" aria-hidden="true"></span>
+          </li>
+          <li class="wall-art-preview__progress-step" data-progress-step="2">
+            <span class="wall-art-preview__progress-item" data-js="progress-item" aria-label="Crop, upcoming"><span class="wall-art-preview__progress-marker" data-js="progress-marker">03</span><span class="wall-art-preview__progress-label">Crop</span></span>
+            <span class="wall-art-preview__progress-connector" aria-hidden="true"></span>
+          </li>
+          <li class="wall-art-preview__progress-step" data-progress-step="3">
+            <span class="wall-art-preview__progress-item" data-js="progress-item" aria-label="Review, upcoming"><span class="wall-art-preview__progress-marker" data-js="progress-marker">04</span><span class="wall-art-preview__progress-label">Review</span></span>
+          </li>
+        </ol>
+        <div class="wall-art-preview__progress-mobile">
+          <p data-js="progress-mobile">Step 01 of 04 · Photo</p>
+          <div class="wall-art-preview__progress-bar" data-js="progressbar" role="progressbar" aria-label="Designer progress" aria-valuemin="0" aria-valuemax="4" aria-valuenow="1" aria-valuetext="Step 1 of 4: Photo"><span data-js="progress-fill"></span></div>
+        </div>
+        <span class="visually-hidden" data-js="progress">Step 1 of 4</span>
+      </nav>
+      <div class="wall-art-preview__stage">
+        <!-- Shared room composition -->
+        <figure class="wall-art-preview__room" data-js="room">
+          <div class="wall-art-preview__scene">
+            <span class="wall-art-preview__badge"><span class="wall-art-preview__badge-dot" aria-hidden="true"></span>WALL PREVIEW</span>
+            <img class="wall-art-preview__room-image" src="assets/images/wall-art-preview-minimal-wall.jpg" alt="Minimal pale concrete wall with soft natural light and no furniture" width="1600" height="868" fetchpriority="high">
+            <canvas class="wall-art-preview__mount" data-js="room-canvas" width="640" height="480" role="img" aria-label="Canvas sample photo in the room"></canvas>
+          </div>
+          <figcaption class="wall-art-preview__room-tools">
+            <span class="wall-art-preview__caption" data-js="room-caption">Canvas · Gallery wrap · Illustrative preview</span>
+            <div class="wall-art-preview__preview-control" data-js="preview-control">
+              <button class="wall-art-preview__preview-toggle" type="button" data-js="preview-toggle" aria-expanded="false" aria-controls="wall-art-print-preview">
+                <!-- Phosphor: eye, regular -->
+                <svg class="icon icon--md" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M247.31,124.76c-.35-.79-8.72-19.71-27.94-38.93C193.45,59.91,162.65,46,128,46S62.55,59.91,36.68,85.83C17.46,105.05,9.09,123.97,8.74,124.76a8,8,0,0,0,0,6.48c.35.79,8.72,19.71,27.94,38.93C62.55,196.09,93.35,210,128,210s65.45-13.91,91.32-39.83c19.22-19.22,27.59-38.14,27.94-38.93a8,8,0,0,0,0-6.48ZM128,194c-26.2,0-50.12-10.56-71.08-31.38A158.88,158.88,0,0,1,25.08,128,158.88,158.88,0,0,1,56.92,93.38C77.88,72.56,101.8,62,128,62s50.12,10.56,71.08,31.38A158.88,158.88,0,0,1,230.92,128a158.88,158.88,0,0,1-31.84,34.62C178.12,183.44,154.2,194,128,194Zm0-112a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,76a30,30,0,1,1-30-30A30,30,0,0,1,128,158Z"/></svg>
+                <span>Print preview</span>
+              </button>
+              <div class="wall-art-preview__popover" id="wall-art-print-preview" data-js="print-preview" role="region" aria-label="Print preview" aria-hidden="true">
+                <canvas class="wall-art-preview__print-canvas" data-js="print-canvas" width="640" height="480" role="img" aria-label="Front view of the cropped photo"></canvas>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+
+        <!-- Step 1: photo -->
+        <div class="wall-art-preview__photo-layout" data-js="step" data-step="photo" hidden>
+          <div class="wall-art-preview__workspace" data-js="drop-zone" aria-busy="false">
+            <div class="wall-art-preview__empty" data-js="photo-empty">
+              <!-- Phosphor: image, regular -->
+              <svg class="icon icon--lg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216v98.74l-27.31-27.31a16,16,0,0,0-22.63,0L144,149.49,94.63,100.12a16,16,0,0,0-22.63,0L40,132.12Zm0,144V154.74l43.31-43.31L132.69,161l-39.32,39ZM216,200H116l61.37-61.37L216,177.25Zm-60-112a12,12,0,1,1,12,12A12,12,0,0,1,156,88Z"/></svg>
+              <h2 id="wall-art-photo-workspace-title">Start with a photo</h2>
+              <label class="button button--primary wall-art-preview__upload-button">Upload a photo<input class="wall-art-preview__file" type="file" name="photo" accept="image/jpeg,image/png,image/webp,.heic,.heif" aria-describedby="wall-art-photo-help wall-art-error" data-js="file"></label>
+              <a class="wall-art-preview__library-link" href="#wall-art-photo-gallery" data-js="choose-library" hidden>Choose from your library</a>
+              <p class="wall-art-preview__photo-help" id="wall-art-photo-help">Or drag and drop your photo here · JPG, PNG, WebP or supported HEIC · Up to 20 MiB</p>
+            </div>
+            <figure class="wall-art-preview__photo-preview" data-js="photo-preview" hidden>
+              <img data-js="photo-preview-image" src="assets/images/wall-art-preview-forest.png" alt="" width="192" height="128" decoding="async">
+              <button class="button wall-art-preview__change-photo" type="button" data-js="change-photo">Change photo</button>
+            </figure>
+            <button class="button wall-art-preview__secondary" type="button" data-js="cancel-load" hidden>Cancel loading</button>
+          </div>
+          <section class="wall-art-preview__gallery-section" id="wall-art-photo-gallery" aria-labelledby="wall-art-gallery-title" data-js="gallery-section" hidden>
+            <div class="wall-art-preview__gallery-header">
+              <div>
+                <h2 id="wall-art-gallery-title">Your photos <span data-js="gallery-count"></span></h2>
+                <p class="wall-art-preview__gallery-help" data-js="gallery-help">Stored in this browser on this device only.</p>
+              </div>
+              <div class="wall-art-preview__gallery-header-actions">
+                <button class="wall-art-preview__text-action" type="button" data-js="delete-all">Delete all</button>
+                <button class="wall-art-preview__text-action" type="button" data-js="sample-open" aria-haspopup="dialog" aria-controls="wall-art-sample-dialog">Explore sample photos</button>
+              </div>
+            </div>
+            <ul class="wall-art-preview__gallery" data-js="gallery" aria-label="Photos saved in this browser"></ul>
+            <template data-js="gallery-action-template">
+              <details class="wall-art-preview__gallery-actions">
+                <summary class="icon-button wall-art-preview__gallery-menu-trigger" aria-label="Photo actions" title="Photo actions">
+                  <!-- Phosphor: dots-three-vertical, regular -->
+                  <svg class="icon icon--md" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M128,96a16,16,0,1,0-16-16A16,16,0,0,0,128,96Zm0,16a16,16,0,1,0,16,16A16,16,0,0,0,128,112Zm0,48a16,16,0,1,0,16,16A16,16,0,0,0,128,160Z"/></svg>
+                </summary>
+                <button class="wall-art-preview__gallery-delete" type="button" data-js="gallery-delete">Delete photo</button>
+              </details>
+            </template>
+            <button class="wall-art-preview__gallery-more" type="button" data-js="gallery-more" hidden>Show more photos</button>
+          </section>
+          <div class="wall-art-preview__sample-action" data-js="sample-empty-action">
+            <button class="wall-art-preview__text-action" type="button" data-js="sample-open" aria-haspopup="dialog" aria-controls="wall-art-sample-dialog">Explore sample photos</button>
+          </div>
+          <dialog class="wall-art-preview__sample-dialog" id="wall-art-sample-dialog" aria-labelledby="wall-art-sample-title" data-js="sample-dialog">
+            <div class="wall-art-preview__sample-dialog-content">
+              <div class="wall-art-preview__sample-dialog-header">
+                <h2 id="wall-art-sample-title">Explore sample photos</h2>
+                <button class="button wall-art-preview__secondary" type="button" data-js="sample-close">Close</button>
+              </div>
+              <p class="wall-art-preview__help">Samples are for preview only and are not saved to your photo library.</p>
+              <div class="wall-art-preview__samples" data-js="sample-grid">
+                <button class="wall-art-preview__sample" type="button" data-js="sample" data-sample="forest" aria-pressed="false"><img src="assets/images/wall-art-preview-forest.png" alt="" width="192" height="128" loading="lazy" decoding="async"><span>Forest lake</span><small>Sample photo</small></button>
+              </div>
+            </div>
+          </dialog>
+        </div>
+
+        <!-- Step 3: crop -->
+        <div class="wall-art-preview__crop-layout" data-js="step" data-step="crop" hidden>
+          <div>
+            <div class="wall-art-preview__crop-preview">
+              <canvas class="wall-art-preview__editor" data-js="crop-canvas" width="960" height="640" role="img" aria-label="Photo crop preview; use the labelled controls to adjust the crop"></canvas>
+            </div>
+            <p class="wall-art-preview__help">Keep important details inside the guide. The guide is illustrative, not a production trim boundary.</p>
+          </div>
+          <div class="wall-art-preview__options">
+            <h2>Crop &amp; edit your photo</h2>
+            <fieldset>
+              <legend>Aspect ratio</legend>
+              <div class="wall-art-preview__ratios">
+                <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="ratio" value="original" checked data-js="ratio"><span>Original</span></label>
+                <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="ratio" value="3:2" data-js="ratio"><span>3:2</span></label>
+                <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="ratio" value="4:3" data-js="ratio"><span>4:3</span></label>
+                <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="ratio" value="16:9" data-js="ratio"><span>16:9</span></label>
+                <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="ratio" value="print" data-js="ratio"><span>Print size</span></label>
+              </div>
+            </fieldset>
+            <label class="wall-art-preview__range wall-art-preview__range--zoom"><span>Zoom</span><span data-js="zoom-value">100%</span><input type="range" name="zoom" min="100" max="300" value="100" step="1" data-js="zoom"></label>
+            <label class="wall-art-preview__range">Horizontal position<input type="range" name="horizontal" min="0" max="100" value="50" step="1" data-js="horizontal"></label>
+            <label class="wall-art-preview__range">Vertical position<input type="range" name="vertical" min="0" max="100" value="50" step="1" data-js="vertical"></label>
+            <button class="button wall-art-preview__secondary" type="button" data-js="rotate">Rotate 90°</button>
+            <button class="button wall-art-preview__secondary" type="button" data-js="reset-crop">Reset crop</button>
+            <p class="wall-art-preview__quality" data-js="crop-quality">A local resolution estimate is not production approval. Product quality thresholds are unavailable.</p>
+          </div>
+        </div>
+
+        <!-- Step 2: configuration -->
+        <div class="wall-art-preview__options" data-js="step" data-step="configure" hidden>
+          <h2>Choose &amp; customise</h2>
+          <fieldset><legend>Format</legend><div class="wall-art-preview__choices">
+            <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="option-format" value="canvas" checked data-js="format"><span>Canvas</span></label>
+            <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="option-format" value="framed" data-js="format"><span>Framed</span></label>
+            <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="option-format" value="poster" data-js="format"><span>Poster</span></label>
+            <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="option-format" value="aluminium" data-js="format"><span>Aluminium</span></label>
+          </div></fieldset>
+          <fieldset><legend>Size (Figma examples, not a live catalogue)</legend><div class="wall-art-preview__sizes">
+            <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="size" value="30" data-js="size"><span>30 × 20 cm</span></label>
+            <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="size" value="60" checked data-js="size"><span>60 × 40 cm</span></label>
+            <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="size" value="90" data-js="size"><span>90 × 60 cm</span></label>
+          </div></fieldset>
+          <p class="wall-art-preview__help">Custom sizes require a live catalogue and are not available in this demo.</p>
+          <fieldset><legend>Orientation</legend><div class="wall-art-preview__choices">
+            <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="orientation" value="landscape" checked data-js="orientation"><span>Landscape</span></label>
+            <label class="wall-art-preview__choice"><input class="visually-hidden" type="radio" name="orientation" value="portrait" data-js="orientation"><span>Portrait</span></label>
+          </div></fieldset>
+          <label class="wall-art-preview__field" for="wall-art-finish">Finish<select id="wall-art-finish" name="finish" data-js="finish"><option value="gallery-wrap">Gallery wrap</option></select></label>
+          <p class="wall-art-preview__help">Changing size or orientation updates the crop to the print proportions. <button class="wall-art-preview__text-action" type="button" data-js="adjust-crop">Adjust crop</button></p>
+          <p class="wall-art-preview__price">Your price <strong>Unavailable in prototype</strong></p>
+        </div>
+
+        <!-- Step 5: review -->
+        <div class="wall-art-preview__options" data-js="step" data-step="review" hidden>
+          <h2>Your wall art</h2>
+          <dl class="wall-art-preview__summary">
+            <div><dt>Format</dt><dd data-js="summary-format">Canvas</dd></div>
+            <div><dt>Size</dt><dd data-js="summary-size">60 × 40 cm</dd></div>
+            <div><dt>Orientation</dt><dd data-js="summary-orientation">Landscape</dd></div>
+            <div><dt>Photo</dt><dd data-js="summary-photo">No photo selected</dd></div>
+            <div><dt>Crop</dt><dd data-js="summary-crop">Original proportions</dd></div>
+            <div><dt>Finish</dt><dd data-js="summary-finish">Gallery wrap</dd></div>
+          </dl>
+          <section class="wall-art-preview__review-quality" aria-labelledby="wall-art-review-quality-title" data-js="review-quality" data-state="unverified">
+            <svg class="icon icon--md wall-art-preview__review-quality-icon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm0-136a12,12,0,1,0,12,12A12,12,0,0,0,128,80Zm8,112V120a8,8,0,0,0-16,0v72a8,8,0,0,0,16,0Z"/></svg>
+            <div class="wall-art-preview__review-quality-copy">
+              <h3 id="wall-art-review-quality-title">Local image resolution estimate</h3>
+              <p data-js="review-quality-text" role="status" aria-live="polite">Select a photo to see an estimate. Production print quality has not been verified.</p>
+            </div>
+          </section>
+          <p class="wall-art-preview__price">Total <strong>Unavailable in prototype</strong></p>
+          <div class="wall-art-preview__edit-actions" role="group" aria-label="Edit design sections">
+            <button class="button wall-art-preview__secondary" type="button" data-js="edit-photo">Edit photo</button>
+            <button class="button wall-art-preview__secondary" type="button" data-js="edit-options">Edit options</button>
+            <button class="button wall-art-preview__secondary" type="button" data-js="edit-crop">Edit crop</button>
+          </div>
+          <button class="button wall-art-preview__secondary" type="button" data-js="download">Download preview</button>
+          <p class="wall-art-preview__help" id="wall-art-basket-help">Basket service is not connected, so this design cannot be added to a real basket.</p>
+        </div>
+
+      </div>
+
+      <p class="wall-art-preview__error" id="wall-art-error" role="alert" data-js="error"></p>
+      <p class="wall-art-preview__status" role="status" aria-live="polite" data-js="status"></p>
+      <div class="wall-art-preview__actions" data-js="actions">
+        <div class="wall-art-preview__action-dock" data-js="action-dock">
+          <div class="wall-art-preview__action-left">
+            <button class="button wall-art-preview__back" type="button" data-js="back" hidden>Back</button>
+            <img class="wall-art-preview__dock-thumbnail" data-js="dock-thumbnail" alt="" width="64" height="48" hidden>
+            <p class="wall-art-preview__selection-count" data-js="selection-count" aria-live="polite">No photo selected</p>
+          </div>
+          <div class="wall-art-preview__action-right">
+            <button class="button button--primary" type="submit" data-js="next">Continue to customise</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+<!-- /WALL ART PREVIEW -->

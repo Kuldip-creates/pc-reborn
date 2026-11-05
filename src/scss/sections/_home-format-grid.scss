@@ -1,0 +1,96 @@
+@use '../abstracts/breakpoints' as *;
+
+.home-format-grid .section-heading {
+  align-items: flex-end;
+}
+
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-24);
+}
+
+.format-card {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  grid-template-rows: auto auto auto;
+  gap: var(--space-8);
+  color: var(--color-text-primary);
+}
+
+.format-card > img {
+  grid-row: 1;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  aspect-ratio: 4 / 5;
+}
+
+.format-card__image {
+  position: relative;
+  display: block;
+  grid-row: 1;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  aspect-ratio: 4 / 5;
+}
+
+.format-card__image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.format-card__name {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.format-card__description {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.format-card .badge {
+  top: var(--space-12);
+}
+
+// Related-format variant (PDP, Figma 3230:7767): an illustrated wall scene
+// instead of a photo, with the name and "Explore" on one row.
+.format-card--related {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: var(--space-12);
+}
+
+.format-card__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-16);
+  padding-inline: var(--space-16);
+}
+
+.format-card--related .format-card__name {
+  font-size: var(--font-size-trust);
+  font-weight: 600;
+  line-height: var(--line-height-trust);
+}
+
+@media (hover: hover) {
+  .format-card--related:hover .text-link {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+@include up('lg') {
+  .format-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

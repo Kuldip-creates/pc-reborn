@@ -1,0 +1,160 @@
+// ==========================================================
+// PDP SIZE GUIDE | Wall diagram, four measuring steps, tip (3230:7584)
+// ==========================================================
+@use '../abstracts/breakpoints' as *;
+
+.pdp-size-guide__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-24);
+}
+
+.pdp-size-guide__figure {
+  display: grid;
+  gap: var(--space-48);
+  padding: var(--space-36) 0 var(--space-6);
+  border-radius: var(--radius-media);
+  background: var(--color-surface-secondary);
+}
+
+// Wall plane starts 92px into the 500px panel (18.4%); the label column holds "Wall height".
+.pdp-size-guide__diagram {
+  display: grid;
+  grid-template-areas:
+    'width .'
+    'wall height';
+  grid-template-columns: minmax(0, 288fr) minmax(0, 120fr);
+  row-gap: var(--space-16);
+  padding-inline-start: 18.4%;
+}
+
+.pdp-size-guide__label {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.pdp-size-guide__label--width {
+  grid-area: width;
+  justify-self: center;
+}
+
+.pdp-size-guide__label--height {
+  grid-area: height;
+  align-self: center;
+  padding-inline-start: var(--space-8);
+}
+
+.pdp-size-guide__wall {
+  position: relative;
+  display: grid;
+  grid-area: wall;
+  place-items: center;
+  border: var(--space-1) solid var(--color-text-muted);
+  background: var(--color-surface-primary);
+  aspect-ratio: 288 / 154;
+}
+
+// Width dimension line, drawn above the wall.
+.pdp-size-guide__wall::before {
+  position: absolute;
+  top: calc(var(--space-12) * -1);
+  right: 0;
+  left: 0;
+  border-top: var(--space-1) solid var(--color-border-interactive);
+  content: '';
+}
+
+.pdp-size-guide__canvas {
+  display: block;
+  width: 49.3%;
+  padding: var(--space-8);
+  background: var(--color-action-primary);
+  aspect-ratio: 142 / 98;
+}
+
+.pdp-size-guide__canvas img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pdp-size-guide__figure figcaption {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  text-align: center;
+}
+
+.pdp-size-guide__steps {
+  display: grid;
+  align-content: start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pdp-size-guide__steps li {
+  display: grid;
+  grid-template-columns: var(--space-32) minmax(0, 1fr);
+  align-items: center;
+  column-gap: var(--space-16);
+  padding-block: var(--space-12);
+  border-bottom: var(--space-1) solid var(--color-border-subtle);
+}
+
+.pdp-size-guide__steps li:last-child {
+  border-bottom: 0;
+}
+
+.pdp-size-guide__number {
+  display: grid;
+  width: var(--space-32);
+  height: var(--space-32);
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-trust);
+  font-weight: 600;
+  line-height: var(--line-height-trust);
+}
+
+.pdp-size-guide__steps h3 {
+  font-size: var(--font-size-trust);
+  font-weight: 600;
+  line-height: var(--line-height-trust);
+}
+
+.pdp-size-guide__steps p {
+  margin-top: var(--space-4);
+  color: var(--color-text-body);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.pdp-size-guide__tip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8) var(--space-16);
+  margin-top: var(--space-12);
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-media);
+  background: var(--color-surface-secondary);
+}
+
+.pdp-size-guide__tip p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+@include up('lg') {
+  // Figma columns: 500px diagram, 48px gap, 807px steps.
+  .pdp-size-guide__layout {
+    grid-template-columns: minmax(0, 500fr) minmax(0, 807fr);
+    column-gap: var(--space-48);
+  }
+}

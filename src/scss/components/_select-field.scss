@@ -1,0 +1,56 @@
+// ==========================================================
+// SELECT FIELD | Label, native select with chevron, helper text
+// ==========================================================
+.select-field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-4) var(--space-12);
+}
+
+.select-field__label {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+}
+
+.select-field__control {
+  position: relative;
+  display: inline-grid;
+}
+
+.select-field__control select {
+  padding: var(--space-8) var(--space-48) var(--space-8) var(--space-12);
+  border: var(--space-1) solid var(--color-border-interactive);
+  border-radius: var(--radius-control);
+  background: var(--color-surface-primary);
+  color: var(--color-text-primary);
+  font: inherit;
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  cursor: pointer;
+  appearance: none;
+}
+
+.select-field__control img {
+  position: absolute;
+  top: 50%;
+  right: var(--space-12);
+  width: 14px;
+  height: 14px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.select-field__help {
+  grid-column: 1 / -1;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+@media (hover: hover) {
+  .select-field__control select:hover {
+    border-color: var(--color-text-primary);
+  }
+}

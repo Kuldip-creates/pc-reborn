@@ -1,0 +1,11 @@
+{
+  "breadcrumb": true,
+  "hero": true,
+  "format": true,
+  "display": false,
+  "comparison": false,
+  "how-it-works": false,
+  "faq": true,
+  "shop-by-room": true,
+  "craftsmanship": false
+}

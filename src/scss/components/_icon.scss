@@ -1,0 +1,30 @@
+// ==========================================================
+// ICON | Inline Phosphor SVG sizes (frontend-code-standards §8)
+// ==========================================================
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.icon--sm {
+  width: 16px;
+  height: 16px;
+}
+
+.icon--md {
+  width: 20px;
+  height: 20px;
+}
+
+.icon--lg {
+  width: 32px;
+  height: 32px;
+}
+
+// Hidden <symbol> sprite referenced by <use href="#icon-…">.
+.icon-sprite {
+  display: none;
+}

@@ -1,0 +1,71 @@
+// ==========================================================
+// OPTION SELECTOR | Native radio group styled as option tiles
+// ==========================================================
+// Selection, keyboard (arrow keys) and form state are native; no JavaScript.
+.option-selector {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.option-selector__legend {
+  margin-bottom: var(--space-8);
+  padding: 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+}
+
+// One equal column per option, whatever the option count.
+.option-selector__options {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  gap: var(--space-12);
+}
+
+.option-selector__option {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  padding: var(--space-12) var(--space-8);
+  border: var(--space-1) solid var(--color-border-interactive);
+  border-radius: var(--radius-control);
+  background: var(--color-surface-primary);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  cursor: pointer;
+}
+
+// Selected: darker border plus a second inner ring, so the state does not rely
+// on the near-identical fill colour alone (WCAG 1.4.11).
+.option-selector__option:has(input:checked) {
+  border-color: var(--color-text-primary);
+  background: var(--color-surface-secondary);
+  box-shadow: inset 0 0 0 var(--space-1) var(--color-text-primary);
+}
+
+.option-selector__option:has(input:focus-visible) {
+  outline: 2px solid var(--color-border-interactive);
+  outline-offset: 3px;
+}
+
+.option-selector__option:has(input:disabled) {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.option-selector__help {
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+@media (hover: hover) {
+  .option-selector__option:hover {
+    border-color: var(--color-text-primary);
+  }
+}

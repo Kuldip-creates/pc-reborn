@@ -1,0 +1,48 @@
+// ==========================================================
+// PDP ROOMS | Large canvas inspiration by room (3230:7904)
+// ==========================================================
+@use '../abstracts/breakpoints' as *;
+
+.pdp-rooms {
+  padding-block: var(--space-36) var(--space-48);
+}
+
+.pdp-rooms .section-heading {
+  margin-bottom: var(--space-20);
+}
+
+.pdp-rooms__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pdp-rooms__grid li {
+  display: grid;
+  min-width: 0;
+  gap: var(--space-12);
+}
+
+.pdp-rooms__grid img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-input);
+  aspect-ratio: 251.8 / 323.37;
+  object-fit: cover;
+}
+
+.pdp-rooms__grid span {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-trust);
+  font-weight: 600;
+  line-height: var(--line-height-trust);
+}
+
+@include up('lg') {
+  .pdp-rooms__grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

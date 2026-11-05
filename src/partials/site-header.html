@@ -1,0 +1,59 @@
+<header class="site-header" id="site-header">
+  <a class="announcement-bar" href="https://www.photo-canvas.com/delivery">
+    {{announcement_message}}
+  </a>
+  <div class="site-header__main">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="./index.html" aria-label="Photo Canvas home">PhotoCanvas</a>
+      <nav class="site-nav" aria-label="Primary navigation" data-js="desktop-navigation">
+        {{desktop_navigation}}
+      </nav>
+      <div class="site-header__actions">
+        <button class="icon-button" type="button" aria-label="Search" aria-haspopup="dialog" data-js="search-open">
+          <img src="assets/icons/phosphor-search-regular.svg" alt="" width="20" height="20">
+        </button>
+        <button class="icon-button icon-button--pending site-header__desktop-action" type="button" disabled aria-label="Account (destination not configured)">
+          <img src="assets/icons/phosphor-account-regular.svg" alt="" width="20" height="20">
+        </button>
+        <button class="icon-button icon-button--pending site-header__desktop-action" type="button" disabled aria-label="Shopping bag (basket destination not configured)">
+          <img src="assets/icons/phosphor-shopping-bag-regular.svg" alt="" width="20" height="20">
+        </button>
+        <button class="site-header__menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-js="mobile-nav-open">
+          Menu
+        </button>
+      </div>
+    </div>
+    <nav class="mega-menu" id="site-mega-menu" aria-label="Category menu" hidden data-js="mega-menu">
+      <div class="container mega-menu__inner">
+        {{desktop_mega_menus}}
+      </div>
+    </nav>
+  </div>
+  <dialog class="mobile-nav" id="mobile-nav" aria-labelledby="mobile-nav-title" data-js="mobile-nav">
+    <div class="mobile-nav__header">
+      <h2 id="mobile-nav-title">Shop by category</h2>
+      <button class="mobile-nav__close" type="button" data-js="mobile-nav-close">Close</button>
+    </div>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav__categories">
+        {{mobile_navigation}}
+      </ul>
+    </nav>
+  </dialog>
+  <dialog class="search-dialog" aria-labelledby="search-title" data-js="search-dialog">
+    <div class="search-dialog__header">
+      <h2 id="search-title">Search wall art</h2>
+      <button class="search-dialog__close" type="button" data-js="search-close">Close</button>
+    </div>
+    <label class="visually-hidden" for="site-search">Search products and formats</label>
+    <input id="site-search" class="search-dialog__input" type="search" autocomplete="off" placeholder="Search products and formats" data-js="site-search">
+    <p class="search-dialog__label">Suggested formats</p>
+    <ul class="search-dialog__suggestions" data-js="search-suggestions">
+      <li><a href="./large-canvas-prints.html" data-search-term="canvas">Canvas Prints</a></li>
+      <li><a href="https://www.photo-canvas.com/framed-photo-prints" data-search-term="framed">Framed Photo Prints</a></li>
+      <li><a href="https://www.photo-canvas.com/photo-poster" data-search-term="poster print">Posters &amp; Photo Prints</a></li>
+      <li><a href="https://www.photo-canvas.com/aluminium-photo-prints" data-search-term="metal aluminium">Metal Prints</a></li>
+    </ul>
+    <p class="search-dialog__empty" hidden data-js="search-empty">No suggested formats match your search.</p>
+  </dialog>
+</header>

@@ -1,0 +1,25 @@
+// ==========================================================
+// BREADCRUMB | Page location trail (CP, PDP)
+// ==========================================================
+.breadcrumb {
+  background: var(--color-surface-primary);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+  margin-block: 0;
+  padding: var(--space-12) 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  list-style: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

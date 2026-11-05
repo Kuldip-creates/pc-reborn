@@ -1,0 +1,89 @@
+// ==========================================================
+// PDP HOW IT WORKS | Product steps and delivery information layout
+// ==========================================================
+@use '../abstracts/breakpoints' as *;
+
+.pdp-how-it-works-delivery {
+  padding-block: var(--space-24);
+}
+
+.pdp-how-it-works-delivery__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-24);
+}
+
+.pdp-how-it-works h2 {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: var(--font-size-section-heading);
+  font-weight: 400;
+  line-height: var(--line-height-section-heading);
+}
+
+.pdp-how-it-works__steps {
+  display: grid;
+  margin: var(--space-36) 0 var(--space-24);
+  padding: 0;
+  list-style: none;
+}
+
+.pdp-how-it-works__steps li {
+  display: grid;
+  grid-template-columns: var(--space-36) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.pdp-how-it-works__steps li > div {
+  padding-block: var(--space-32);
+}
+
+.pdp-how-it-works__steps li:not(:last-child) > div {
+  border-bottom: var(--space-1) solid var(--color-border-interactive);
+}
+
+.pdp-how-it-works__steps h3,
+.pdp-how-it-works__guidelines h3 {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-control);
+  font-weight: 600;
+  line-height: var(--line-height-control);
+}
+
+.pdp-how-it-works__steps p,
+.pdp-how-it-works__guidelines p {
+  margin-top: var(--space-4);
+  color: var(--color-text-body);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.pdp-how-it-works__guidelines {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-16);
+  padding: var(--space-24);
+  border-radius: var(--radius-media);
+  background: var(--color-surface-secondary);
+}
+
+.pdp-how-it-works__guidelines > .icon {
+  padding-inline-end: var(--space-16);
+  border-inline-end: var(--space-1) solid var(--color-border-interactive);
+  box-sizing: content-box;
+}
+
+@include up('lg') {
+  .pdp-how-it-works-delivery {
+    padding-block: var(--space-48);
+  }
+
+  .pdp-how-it-works-delivery__layout {
+    grid-template-columns: minmax(0, 620fr) minmax(0, 686fr);
+    column-gap: calc(var(--space-48) + var(--space-1));
+  }
+}

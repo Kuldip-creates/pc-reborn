@@ -1,0 +1,72 @@
+body {
+  color: var(--color-text-body);
+  font-family: var(--font-ui);
+  font-size: var(--font-size-body);
+  font-weight: 500;
+  line-height: var(--line-height-body);
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text-primary);
+  font-weight: 400;
+}
+
+h1,
+.section-heading h2,
+.home-newsletter h2,
+.factory-copy h2,
+.room-panel__copy h3,
+.journey-grid h3 {
+  font-family: var(--font-display);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+button:hover {
+  text-decoration-thickness: 1px;
+}
+
+:focus-visible {
+  outline: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.skip-link {
+  position: absolute;
+  z-index: var(--layer-dialog);
+  top: var(--space-8);
+  left: var(--space-8);
+  padding: var(--space-8) var(--space-12);
+  transform: translateY(-160%);
+  background: var(--color-surface-primary);
+  color: var(--color-text-primary);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}

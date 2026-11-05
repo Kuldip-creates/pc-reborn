@@ -1,0 +1,16 @@
+{
+  "name": "pc-reborn",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "lint:tokens": "node scripts/check-scss-tokens.js",
+    "build:css": "sass src/scss/main.scss src/css/main.css --style=compressed --no-source-map",
+    "build:html": "node scripts/build-html.js",
+    "build": "npm run lint:tokens && npm run build:css && npm run build:html",
+    "dev": "npm run build && node scripts/dev-server.js",
+    "watch:css": "sass --watch src/scss/main.scss src/css/main.css"
+  },
+  "devDependencies": {
+    "sass": "^1.89.0"
+  }
+}

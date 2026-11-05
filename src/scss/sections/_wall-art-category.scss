@@ -1,0 +1,291 @@
+@use '../abstracts/breakpoints' as *;
+
+.cp-hero {
+  background: var(--color-surface-secondary);
+}
+
+.cp-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-24);
+  padding-block: var(--space-48);
+}
+
+.cp-hero__copy {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.cp-hero__copy h1 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-section-heading);
+  line-height: var(--line-height-section-heading);
+}
+
+.cp-hero__copy p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.cp-hero__image {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  aspect-ratio: 790 / 264;
+  object-fit: cover;
+}
+
+.cp-format-section,
+.cp-display-section,
+.cp-comparison-section,
+.cp-faq-section,
+.cp-shop-by-room {
+  background: var(--color-surface-primary);
+}
+
+.cp-format-section .section-heading,
+.cp-display-section .section-heading,
+.cp-comparison-section .section-heading,
+.cp-how-it-works .section-heading,
+.cp-faq-section .section-heading {
+  margin-bottom: var(--space-24);
+}
+
+.cp-format-section .format-card__price {
+  color: var(--color-text-body);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+}
+
+.cp-format-section .format-card__rating {
+  position: absolute;
+  bottom: var(--space-12);
+  left: var(--space-12);
+  padding: var(--space-6) var(--space-8);
+  border-radius: var(--radius-input);
+  background: var(--color-surface-primary);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.cp-faq-section .faq__item summary {
+  min-height: 52px;
+}
+
+.cp-faq-section .faq__toggle {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+}
+
+.cp-shop-by-room .section-heading {
+  margin-bottom: var(--space-24);
+}
+
+.cp-comparison-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-16);
+}
+
+.cp-comparison-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 10px 8px 8px 10px;
+  border: var(--space-1) solid var(--color-text-muted);
+  border-radius: var(--radius-control);
+  background: var(--color-surface-primary);
+}
+
+.cp-comparison-card__image {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  aspect-ratio: 306.75 / 165;
+  object-fit: cover;
+}
+
+.cp-comparison-card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-24);
+  padding: var(--space-12) 10px;
+}
+
+.cp-comparison-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--font-size-step-heading);
+  line-height: var(--line-height-step-heading);
+}
+
+.cp-comparison-card__look {
+  color: var(--color-text-body);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+}
+
+.cp-comparison-card__suited {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+// The label column sizes to its widest label, so values stay aligned across
+// rows without a fixed width and long translated labels cannot overlap them.
+.cp-comparison-card__facts {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-4) var(--space-8);
+  margin: 0;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.cp-comparison-card__facts > div {
+  display: contents;
+}
+
+.cp-comparison-card__facts dt {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.cp-comparison-card__facts dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--color-text-body);
+}
+
+.cp-comparison-card__link {
+  margin-top: auto;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  line-height: var(--line-height-small);
+}
+
+.cp-comparison-card__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cp-comparison-note {
+  margin-top: var(--space-24);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.cp-how-it-works .journey-grid img {
+  aspect-ratio: 429 / 242;
+}
+
+.factory-layout--cp {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-32);
+}
+
+.cp-craftsmanship__image {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  aspect-ratio: 660 / 512;
+  object-fit: cover;
+}
+
+.cp-craftsmanship__copy {
+  gap: var(--space-20);
+}
+
+.cp-craftsmanship__intro {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.cp-quality-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-16) var(--space-24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cp-quality {
+  min-width: 0;
+}
+
+.cp-quality__icon {
+  display: grid;
+  width: fit-content;
+  place-items: center;
+  padding: var(--space-8);
+  border-radius: 50%;
+  background: var(--color-surface-secondary);
+}
+
+.cp-quality__icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.cp-quality h3 {
+  margin-top: var(--space-6);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-trust);
+  font-weight: 600;
+  line-height: var(--line-height-trust);
+}
+
+.cp-quality p {
+  margin-top: var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-trust);
+}
+
+.cp-quality a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@include up('md') {
+  .cp-comparison-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cp-quality-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@include up('lg') {
+  .cp-comparison-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .cp-hero__inner {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 5fr);
+    column-gap: var(--space-88);
+  }
+
+  .cp-how-it-works .journey-grid {
+    gap: var(--space-24);
+  }
+
+  .factory-layout--cp {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

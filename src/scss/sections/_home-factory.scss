@@ -1,0 +1,56 @@
+@use '../abstracts/breakpoints' as *;
+
+.factory-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.factory-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-20);
+}
+
+.factory-gallery img {
+  height: auto;
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  aspect-ratio: 4 / 3;
+}
+
+.factory-gallery .factory-gallery__main {
+  aspect-ratio: 23 / 20;
+}
+
+.factory-copy {
+  display: grid;
+  align-content: center;
+  gap: var(--space-16);
+}
+
+.factory-copy p {
+  color: var(--color-text-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+@include up('lg') {
+  .factory-layout {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 5fr);
+    gap: var(--space-48);
+  }
+
+  .factory-gallery {
+    grid-template-columns: minmax(0, 23fr) minmax(0, 16fr);
+  }
+
+  .factory-gallery img {
+    height: 100%;
+  }
+
+  .factory-gallery .factory-gallery__main {
+    grid-row: 1 / span 2;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "product": true,
+  "size-guide": true,
+  "wraps": true,
+  "trust-strip": true,
+  "quality": true,
+  "delivery": true,
+  "faq": true,
+  "testimonials": true,
+  "rooms": false,
+  "related": true,
+  "cta-band": false
+}

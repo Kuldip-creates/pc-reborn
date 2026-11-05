@@ -1,0 +1,80 @@
+@use '../abstracts/breakpoints' as *;
+
+.trust-strip {
+  background: var(--color-surface-primary);
+}
+
+.trust-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-16);
+  padding-block: var(--space-20);
+}
+
+.trust-item {
+  display: grid;
+  grid-template-columns: var(--space-32) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.trust-item > img {
+  width: var(--space-24);
+  height: var(--space-24);
+  justify-self: center;
+}
+
+.trust-item h2 {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-trust);
+  font-weight: 600;
+  line-height: var(--line-height-trust);
+}
+
+.trust-item p,
+.trust-item a {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.trust-item a:hover {
+  text-decoration: underline;
+  text-underline-offset: var(--space-3);
+}
+
+// PDP variant (Figma 3230:7558): warm band, icon aligned to the heading,
+// 14px body-colour description.
+.trust-strip--pdp {
+  background: var(--color-surface-secondary);
+}
+
+.trust-strip--pdp .trust-strip__grid {
+  padding-block: var(--space-24);
+}
+
+.trust-strip--pdp .trust-item {
+  grid-template-columns: var(--space-24) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-16);
+  padding-inline-end: var(--space-8);
+}
+
+.trust-strip--pdp .trust-item p {
+  margin-top: var(--space-4);
+  color: var(--color-text-body);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+}
+
+@include up('lg') {
+  .trust-strip__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    padding-block: var(--space-32);
+  }
+
+  .trust-strip--pdp .trust-strip__grid {
+    padding-block: var(--space-24);
+  }
+}

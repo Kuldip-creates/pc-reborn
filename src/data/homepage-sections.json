@@ -1,0 +1,13 @@
+{
+  "home-hero": true,
+  "trust-strip": true,
+  "home-bestsellers": true,
+  "home-format-grid": true,
+  "home-ideas": false,
+  "home-shop-by-room": false,
+  "home-quality": true,
+  "home-personalisation": true,
+  "home-factory": true,
+  "home-testimonials": true,
+  "home-newsletter": true
+}

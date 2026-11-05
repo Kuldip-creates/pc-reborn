@@ -1,0 +1,57 @@
+// 1355px content width (Figma 04 Layout & Grid), centred. Below it the container
+// fills the viewport minus a 24px gutter on each side, so there is no breakpoint
+// override and no dependency on 100vw (which includes the scrollbar).
+.container {
+  width: min(100% - var(--space-24) * 2, 1355px);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--space-48);
+}
+
+.section--warm {
+  background: var(--color-surface-secondary);
+}
+
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-24);
+  margin-bottom: var(--space-24);
+}
+
+.section-heading h2,
+.home-newsletter h2,
+.factory-copy h2 {
+  font-size: var(--font-size-section-heading);
+  line-height: var(--line-height-section-heading);
+}
+
+.section-heading p {
+  margin-top: var(--space-8);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.section-heading--stacked {
+  display: block;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-control);
+  line-height: var(--line-height-control);
+  white-space: nowrap;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

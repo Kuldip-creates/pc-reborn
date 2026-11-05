@@ -1,0 +1,20 @@
+.icon-button {
+  display: inline-grid;
+  flex-shrink: 0;
+  place-items: center;
+  padding: var(--space-12);
+  border: 0;
+  border-radius: var(--radius-control);
+  background: var(--color-surface-primary);
+  line-height: var(--line-height-control);
+  cursor: pointer;
+}
+
+.icon-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-button--pending {
+  opacity: 0.72;
+}

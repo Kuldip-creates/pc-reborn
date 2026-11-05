@@ -1,0 +1,22 @@
+// ==========================================================
+// PDP PRODUCT | Gallery and purchase panel layout (Figma 3230:7509)
+// ==========================================================
+@use '../abstracts/breakpoints' as *;
+
+.pdp-product {
+  padding-block: var(--space-24) 0;
+}
+
+.pdp-product__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-24);
+}
+
+@include up('lg') {
+  .pdp-product__layout {
+    grid-template-columns: minmax(0, 600fr) minmax(0, 695fr);
+    column-gap: calc(var(--space-48) + var(--space-12));
+  }
+}
